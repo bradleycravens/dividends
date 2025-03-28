@@ -1,0 +1,20 @@
+<div *ngIf="data?.length" class="bg-white/5 dark:bg-white/5 border border-gray-700 rounded-xl overflow-x-auto mt-6">
+  <table class="w-full text-sm min-w-[600px]">
+    <thead>
+      <tr class="bg-gray-100 dark:bg-gray-800 text-left text-gray-800 dark:text-gray-100">
+        <th class="p-3">Year</th>
+        <th class="p-3">Total Contributions</th>
+        <th class="p-3">Total Dividends</th>
+        <th class="p-3">Total Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of data" class="border-t border-gray-700">
+        <td class="p-3">{{ row.year }}</td>
+        <td class="p-3">{{ row.totalContributions | currency }}</td>
+        <td class="p-3">{{ row.totalDividends | currency }}</td>
+        <td class="p-3 font-semibold">{{ row.totalValue | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

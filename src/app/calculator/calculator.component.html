@@ -1,0 +1,43 @@
+<div class="max-w-4xl mx-auto space-y-8">
+  <!-- Form Card -->
+  <div class="bg-white/5 backdrop-blur-md border border-gray-700 rounded-xl p-6 shadow-sm dark:bg-white/5 dark:border-gray-700">
+    <h2 class="text-lg font-medium mb-4">Investment Inputs</h2>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <label class="flex flex-col text-sm">
+        Initial Investment
+        <input type="number" formControlName="initialInvestment" class="mt-1 input" />
+      </label>
+
+      <label class="flex flex-col text-sm">
+        Annual Yield (%)
+        <input type="number" formControlName="annualYield" class="mt-1 input" />
+      </label>
+
+      <label class="flex flex-col text-sm">
+        Years to Grow
+        <input type="number" formControlName="years" class="mt-1 input" />
+      </label>
+
+      <label class="flex flex-col text-sm">
+        Contributions per Year
+        <input type="number" formControlName="contributionsPerYear" class="mt-1 input" />
+      </label>
+
+      <label class="flex flex-col text-sm sm:col-span-2">
+        Contribution Amount
+        <input type="number" formControlName="contributionAmount" class="mt-1 input" />
+      </label>
+
+      <div class="sm:col-span-2 mt-2">
+        <button type="submit" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg px-6 py-2 transition">
+          Calculate
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Table + Chart Components -->
+  <app-dividend-table [data]="results$ | async"></app-dividend-table>
+  <app-dividend-chart [data]="results$ | async"></app-dividend-chart>
+</div>

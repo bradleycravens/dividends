@@ -1,0 +1,10 @@
+<!-- dividend-chart.component.html -->
+<div *ngIf="chartOptions"  class="bg-white/5 dark:bg-white/5 border border-gray-700 rounded-xl p-4 mt-6">
+  <apx-chart
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [xaxis]="chartOptions.xaxis"
+    [title]="chartOptions.title"
+    [theme]="chartOptions.theme">
+  </apx-chart>
+</div>
